@@ -1,0 +1,51 @@
+{extend name="AdminPublic:public"}
+
+{block name="title"}技能列表{/block}
+{block name="admin"}
+<html>
+ <head></head>
+ <body>
+  <div class="am-panel am-panel-default"> 
+   <div class="am-panel-hd am-cf" data-am-collapse="{target: '#collapse-panel-2'}">
+    浏览器统计
+    <span class="am-icon-chevron-down am-fr"></span>
+   </div> 
+   <div id="collapse-panel-2" class="am-in"> 
+    <table class="am-table am-table-bd am-table-bdrs am-table-striped am-table-hover"> 
+     <tbody> 
+      <tr> 
+       <th class="am-text-center">技能名字</th> 
+       <th>操作</th> 
+      </tr> 
+     {foreach $info as $key=>$vo } 
+      <tr style="height: 150px"> 
+       <td>{$vo.skill_name}</td> 
+      <td>
+      <div class="am-dropdown am-active" data-am-dropdown="">
+            <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle=""><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+            <ul class="am-dropdown-content">
+              <li><a href="/skill/{$vo.id}/edit">编辑</a></li>
+              <li>
+              	<!-- <a href="/skill/{$vo.id}"></a> -->
+				<form action="/skill/{$vo.id}" method="post">
+         			<input type="hidden" name="_method" value="DELETE">
+         			<input type="submit" value="删除">
+				</form>
+              </li>
+              <li><a href="/skill/{$vo.id}">查看</a></li>
+            </ul>
+        </div>
+        </td>
+
+      </tr> 
+    {/foreach}
+      
+  
+    	
+     </tbody> 
+    </table> 
+   </div> 
+  </div>
+ </body>
+</html>
+{/block}

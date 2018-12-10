@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>论坛消息</title>
+</head>
+<body>
+	<table border="1" width="800" align="center">
+		<tr>
+			<th>id</th>
+			<th>用户名</th>
+			<th>留言内容</th>
+			<th>时间</th>
+			<th>操作</th>
+		</tr>
+		{foreach $list as $key=>$vo } 
+		<tr align="center">
+			<td>{$vo.id}</td>
+			<td>{$vo.user}</td>
+			<td>{$vo.content}</td>
+			<td>{$vo.addtime|date='Y-m-d H:i:s'}</td>
+			<td><a href="/Blog/{$vo.id}">查看详情</a></td>
+		</tr>
+		{/foreach}
+	</table>
+</body>
+</html>

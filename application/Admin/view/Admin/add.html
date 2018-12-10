@@ -1,0 +1,49 @@
+{extend name="AdminPublic:public"}
+{block name="title"}添加管理员{/block}
+{block name="admin"}
+<html>
+ <head></head>
+ <body>
+  <div class="admin-content"> 
+  
+   <div class="am-tabs am-margin" data-am-tabs=""> 
+    <ul class="am-tabs-nav am-nav am-nav-tabs"> 
+     <li class="am-active"><a href="#tab3">管理员moudle</a></li> 
+    </ul> 
+    <div class="am-tabs-bd" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"> 
+  
+
+
+     <div class="am-tab-panel am-fade am-active am-in" id="tab3"> 
+      <form class="am-form" action="/skill" method="post"> 
+       <div class="am-g am-margin-top-sm"> 
+        <div class="am-u-sm-2 am-text-right">
+         管理员
+        </div> 
+        <div class="am-u-sm-4 am-u-end"> 
+         <input type="text" class="am-input-sm" name="admin" /> 
+        </div> 
+       </div> 
+
+        <div class="am-g am-margin-top-sm"> 
+        <div class="am-u-sm-2 am-text-right">
+         管理员密码
+        </div> 
+        <div class="am-u-sm-4 am-u-end"> 
+         <input type="text" class="am-input-sm" name="pwd" /> 
+        </div> 
+       </div> 
+		<div class="am-margin"> 
+		    <input  type="submit" class="am-btn am-btn-primary am-btn-xs" value="提交保存">
+		    <input  type="reset" class="am-btn am-btn-primary am-btn-xs" value="放弃保存"> 
+
+   		</div> 
+      </form> 
+     </div> 
+    </div> 
+   </div> 
+  
+  </div>
+ </body>
+</html>
+{/block}

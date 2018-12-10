@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>讨论详情</title>
+</head>
+<body>
+	<table width="800" border="1" align="center">
+		<tr>
+			<th>时间：</th>
+			<th>评论者:</th>
+			<th>评论内容</th>
+		</tr>
+		{foreach $list as $key=>$vo}
+		<tr align="center">
+			<td>{$vo.addtime|date='Y-m-d H:i:s'}</td>
+			<td>{$vo.r_user}</td>
+			<td>{$vo.content}</td>
+		</tr>
+		{/foreach}
+	</table>
+</body>
+</html>
