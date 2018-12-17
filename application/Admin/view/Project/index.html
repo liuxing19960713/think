@@ -1,0 +1,43 @@
+{extend name="AdminPublic:public"/}
+{block name="title"}项目列表{/block}
+{block name="admin"}
+<html>
+ <head></head>
+ <body>
+  <div class="am-panel am-panel-default"> 
+   <div class="am-panel-hd am-cf" data-am-collapse="{target: '#collapse-panel-4'}">
+    项目列表
+    <span class="am-icon-chevron-down am-fr"></span>
+   </div> 
+   <div id="collapse-panel-4" class="am-panel-bd am-collapse am-in"> 
+    <ul class="am-list admin-content-task"> 
+    {foreach $info as $key=>$vo } 
+     <li> 
+      <div class="admin-task-meta">
+        Posted on {$vo.pj_start_time} TO {$vo.pj_end_time}
+      </div> 
+      <div class="admin-task-bd">
+        {$vo.pj_intro} 
+      </div> 
+      <div class="am-cf"> 
+       <div class="am-btn-toolbar am-fl"> 
+        <div class="am-btn-group am-btn-group-xs"> 
+         <button type="button" class="am-btn am-btn-default"><span class="am-icon-check"></span></button> 
+         <button type="button" class="am-btn am-btn-default"><span class="am-icon-pencil"></span></button> 
+         <button type="button" class="am-btn am-btn-default"><span class="am-icon-times"></span></button> 
+        </div> 
+       </div> 
+       <div class="am-fr"> 
+        <button type="button" class="am-btn am-btn-default am-btn-xs">删除</button> 
+       </div> 
+      </div> </li>
+	{/foreach}
+
+     
+    </ul> 
+   </div> 
+  </div>
+ </body>
+</html>
+
+{/block}
